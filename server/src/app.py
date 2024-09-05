@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template
 import joblib
-
+import os
 
 app = Flask(__name__)
 
@@ -36,9 +36,6 @@ def index():
 
     return render_template('index.html', result=None, result_label=None, result_class=None)
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
 
-if __name__ == "__main__":
-    from waitress import serve
-    serve(app, host="0.0.0.0", port=8080)

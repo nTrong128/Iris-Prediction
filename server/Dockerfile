@@ -1,7 +1,7 @@
 FROM python:3.12
 
 # 2
-RUN pip install Flask gunicorn
+RUN pip install Flask gunicorn joblib
 
 # 3
 COPY src/ /app
