@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iris Prediction</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Iris Prediction</h1>
+      <form method="post">
+        <label for="petal_length">Petal Length:</label>
+        <input
+          type="number"
+          id="petal_length"
+          name="petal_length"
+          step="0.1"
+          min="0"
+          required />
+
+        <label for="petal_width">Petal Width:</label>
+        <input
+          type="number"
+          id="petal_width"
+          name="petal_width"
+          step="0.1"
+          min="0"
+          required />
+
+        <label for="sepal_length">Sepal Length:</label>
+        <input
+          type="number"
+          id="sepal_length"
+          name="sepal_length"
+          step="0.1"
+          min="0"
+          required />
+
+        <label for="sepal_width">Sepal Width:</label>
+        <input
+          type="number"
+          id="sepal_width"
+          name="sepal_width"
+          step="0.1"
+          min="0"
+          required />
+
+        <input type="submit" value="Predict" />
+      </form>
+
+      {% if result %}
+      <div class="result">
+        <h2>Prediction Result:</h2>
+        <p>
+          Predicted label: <span class="label">{{ result_label }}</span>,
+          Predicted class: <span class="class">{{ result_class }}</span>
+        </p>
+      </div>
+      {% else %}
+      <div class="result hidden">
+        <h2>Prediction Result:</h2>
+        <p>No prediction made yet.</p>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
