@@ -1,7 +1,7 @@
 FROM python:3.12
 
 # 2
-RUN pip install Flask gunicorn joblib sklearn pandas numpy
+RUN pip install Flask gunicorn joblib scikit-learn pandas numpy
 
 # 3
 COPY src/ /app
