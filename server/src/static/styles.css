@@ -68,3 +68,8 @@ input[type="submit"]:hover {
 .result.hidden {
   display: none;
 }
+
+.name_box {
+  text-align: center;
+  font-size: 20px;
+}
