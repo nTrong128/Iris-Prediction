@@ -17,4 +17,4 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 print("Accuracy: %.3f" %model.score(X_test, y_pred))
 
-joblib.dump(model, 'svm_model.pkl')
+joblib.dump(model, './server/src/svm_model.pkl')
